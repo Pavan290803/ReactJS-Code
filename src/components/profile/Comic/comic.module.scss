@@ -1,0 +1,351 @@
+@import "../../../assets/main";
+
+.ComicBackground {
+  background-image: url("../../../assets/images/ComicBackground.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  overflow: auto;
+}
+
+.boxProfileContainer {
+  position: relative;
+  width: 80px;
+}
+
+.boxProfileContainerFront {
+  background-color: $white;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background-repeat: no-repeat;
+  // background-size: 80px 80px;
+  background-size: contain;
+  border: 2px solid #363636;
+  border-radius: 20px;
+}
+
+.boxProfileContainerBack {
+  position: absolute;
+  width: 72px;
+  height: 50px;
+  background: #2bb3c0;
+  border: 2px solid #363636;
+  border-radius: 20px;
+  bottom: -7px;
+  margin: 0px 4px;
+}
+
+.profileName {
+  font-family: $font_open_sans;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44px;
+  color: #292929;
+}
+
+.profileDesignation {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #292929;
+}
+
+//Designation
+
+.boxDesContainer {
+  width: 100%;
+  position: relative;
+}
+
+.BioIconTop{
+  position: absolute;
+  top:-12px;
+  left:-12px;
+}
+
+.BioIconBottom{
+  position: absolute;
+  bottom: -12px;
+  right: -12px;
+}
+
+.boxDesContainerBack {
+  width: 90%;
+  position: absolute;
+  background-color: #7eba94;
+  background-repeat: no-repeat;
+  border: 2px solid #363636;
+  left: 5%;
+  height: 50px;
+  bottom: -10px;
+  border-radius: 20px;
+}
+
+.boxDesContainerFront {
+  width: 100%;
+  position: relative;
+  background-color: $white;
+  border: 2px solid #363636;
+  border-radius: 20px;
+  font-size: 14px;
+  font-family: $font_open_sans;
+  font-weight: 400;
+  text-align: left;
+  padding: 31px 20px;
+}
+
+//Top Social Links
+// #FFFFFF no-repeat center
+.boxTopSocial {
+  // position: relative;
+  width: 72px;
+  height: 79px;
+  background-repeat: no-repeat;
+  background-size: 72px 79px;
+  background-position: center;
+  background-size: contain;
+  margin: 0 auto;
+  
+}
+
+
+
+// .boxTopSocialFront {
+//   position: relative;
+//   width: 72px;
+//   height: 72px;
+//   background-repeat: no-repeat;
+//   background-size: 28px 28px;
+//   background-position: center;
+//   border: 2px solid #363636;
+//   border-radius: 20px;
+//   background-color: $white;
+// }
+
+// .boxTopSocialBack {
+//   position: absolute;
+//   width: 72px;
+//   height: 40px;
+//   background: #2bb3c0;
+//   border: 2px solid #363636;
+//   border-radius: 20px;
+//   bottom: -7px;
+// }
+
+//Social Links
+
+.boxSocialMainContainer{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:14px
+}
+
+@media (min-width: 500px) {
+  .boxSocialMainContainer{
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+  }   
+}
+
+@media (min-width: 600px) {
+  .boxSocialMainContainer{
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 24px;
+  }   
+}
+
+@media (min-width:700px) {
+  .boxSocialMainContainer{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+  }   
+}
+
+@media (max-width: 389px) {
+  .boxSocialMainContainer{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+  }   
+}
+
+@media (max-width: 310px) {
+  .boxSocialMainContainer{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+  }   
+}
+
+.boxSocial {
+  position: relative;
+  width: 64px;
+
+  height: 70px;
+  background-repeat: no-repeat;
+  background-size: 64px 70px;
+  background-size: contain;
+  margin: 0 auto;
+}
+
+// .boxSocialFront {
+//   position: relative;
+//   width: 64px;
+//   height: 64px;
+//   background-repeat: no-repeat;
+//   background-size: 25px 25px;
+//   border: 2px solid #363636;
+//   border-radius: 20px;
+//   background-color: $white;
+//   background-position: center;
+// }
+
+// .boxSocialBack {
+//   position: absolute;
+//   width: 64px;
+//   height: 40px;
+//   background: #ea3ab9;
+//   border: 2px solid #363636;
+//   border-radius: 20px;
+//   bottom: -7px;
+// }
+
+.bottomApp {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 50px;
+
+  .text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    padding: 4px 0px 10px 0px;
+    color: $Nero;
+  }
+}
+
+//Video Player
+
+// .videoPlayer{
+//     border-radius:18px;
+//     height: 180px;
+//     width: 100%;
+// }
+
+// .video{
+//     position: relative;
+//     width: 100%;
+//     height: 180px;
+//     border-radius: 18px;
+//     background-size: 100% 100%;
+//     object-fit: cover;
+//     background-repeat: no-repeat;
+//     z-index: 998;
+
+//     .icon{
+//         position: absolute;
+//         width: 24px;
+//         height: 24px;
+//         top: 8px;
+//         left: 9px;
+//         border-radius: 50%;
+//         background-size: 100% 100%;
+//         object-fit: cover;
+//         background-repeat: no-repeat;
+//         background-color: $white;
+//     }
+
+//     .text{
+//         position: absolute;
+//         top: 8px;
+//         left:40px;
+//         color:$white;
+//     }
+//     .playerIcon{
+//         position: absolute;
+//         top:50%;
+//         left:50%;
+//         -webkit-transform: translate(-50%, -50%);
+//         -ms-transform: translate(-50%, -50%);
+//         transform: translate(-50%, -50%);
+//         cursor:pointer;
+//     }
+// }
+
+// .video:before {
+//     content: " ";
+//     width: 100%;
+//     height: 180px;
+//     position: absolute;
+//     border-radius: 18px;
+//     top: 0;
+//     left: 0;
+//     background: linear-gradient(180deg, rgba(34, 34, 34, 0.8) 8.26%, rgba(34, 34, 34, 0) 88.26%);
+// }
+.videoIconTop{
+  position: absolute;
+  top:-24px;
+  left:40%;
+  z-index: 999; 
+}
+
+.VideoPlayerUserName{
+  font-family: $font_open_sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
+  margin-top:5px;
+}
+
+.boxVideoPlayerContainer {
+  position: relative;
+  width: 100%;
+}
+
+.boxVideoPlayerContainerFront {
+  position: relative;
+  background-color: $white;
+  border: 2px solid #363636;
+  border-radius: 20px;
+}
+
+.boxVideoPlayerContainerBack {
+  width: 90%;
+  position: absolute;
+  height: 50px;
+  border: 2px solid #363636;
+  border-radius: 20px;
+  bottom: -12px;
+  margin: 0px 5% 0px 5%;
+}
+
+.playbtn1 {
+  background: linear-gradient(180deg, #8f29e7 0%, #b440eb 100%);
+  display: inline-block;
+  padding: 12px 22px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20%;
+}
+
+.playbtn1:after {
+  content: "";
+  display: block;
+  position: relative;
+  left: 2px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 20px;
+  border-color: transparent transparent transparent white;
+}

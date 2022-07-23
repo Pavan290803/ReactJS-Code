@@ -1,0 +1,245 @@
+@import "../../../assets/main";
+
+.mainContainer {
+  background-color: #2e303e;
+}
+
+.profileCoverImage {
+  position: relative;
+  height: 502px;
+  width: 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  overflow: auto;
+}
+
+.profileCoverBg {
+  background: linear-gradient(
+    179.72deg,
+    rgba(0, 0, 0, 0) 26.44%,
+    #000000 129.48%
+  );
+  position: absolute;
+  width: 100%;
+  height: 502px;
+  top: 0px;
+}
+
+.profileContainer {
+  position: absolute;
+  left: calc(50% - 181px / 2 - 62px);
+  top: 326px;
+}
+
+.profileName {
+  font-family: $font_open_sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44px;
+  color: $white;
+}
+
+.userProfile {
+  font-family: $font_open_sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: $white;
+}
+
+.userInfoContainer {
+  position: relative;
+  margin-top: -90px;
+}
+
+.userBioContainer {
+  width: calc(100% - 110px);
+  color: $white;
+}
+.userBio {
+  padding: 28px;
+  background: radial-gradient(
+      91.7% 85.29% at 73.58% 32.83%,
+      #7b78c9 0%,
+      #4a4a7f 100%
+    );
+}
+
+.userBioText{
+  font-family: $font_open_sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: $white;
+}
+.userBioTextLoaction
+{
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: $white;
+}
+
+// .getInTouchMainContainer{
+//   width: calc(100% - 110px);
+// }
+
+.boxTopSocial {
+  // position: relative;
+  width: 87px;
+  height: 87px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: 87px 87px;
+}
+
+// .boxTopSocialFront {
+//   position: relative;
+//   width: 87px;
+//   height: 87px;
+//   background-repeat: no-repeat;
+//   background-size: 34px 34px;
+//   background-position: center;
+//   background-color: #8c79d0;
+// }
+
+.getInTouch {
+  height: 87px;
+  width: calc(100% - 87px);
+  background: #41406d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .text1 {
+    font-family: $font_open_sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .text2 {
+    font-family: $font_open_sans;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    align-items: center;
+    text-align: center;
+    color: #6c6b98;
+  }
+}
+
+.TopSocialContainer {
+  margin-top: -115px;
+}
+
+.TopSocialIcon {
+  width: 110px;
+  height: 112px;
+  // background: radial-gradient(
+  //     84.37% 84.37% at 70.91% 31.25%,
+  //     #f294b5 0%,
+  //     #f06596 100%
+  //   );
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  cursor: pointer;
+}
+
+// .TopSocialIcon1 {
+//   position: relative;
+//   width: 32px;
+//   height: 32px;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   background-position: center;
+// }
+
+.playbtn {
+  background: radial-gradient(
+    84.37% 84.37% at 70.91% 31.25%,
+    #f294b5 0%,
+    #f06596 100%
+  );
+  display: inline-block;
+  padding: 12px 22px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20%;
+}
+
+.playbtn:after {
+  content: "";
+  display: block;
+  position: relative;
+  left: 2px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 20px;
+  border-color: transparent transparent transparent white;
+}
+
+.videoPlayer {
+  border-radius: 0px;
+  height: 217px !important;
+  width: 100%;
+}
+
+.video {
+  height: 217px !important;
+  border-radius: 0px;
+
+  .icon {
+    height: 24px;
+    border-radius: 50%;
+  }
+}
+
+.video:before {
+  content: " ";
+  height: 217px !important;
+  border-radius: 0px;
+}
+
+.footerText {
+  color: $white !important;
+}
+
+.boxSocial {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto;
+}
+
+.boxSocialFront {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+  // background-size: 25px 25px;
+  background-size: 64px 64px;
+  // border: 2px solid #363636;
+  // background-color: #8c79d0;
+  background-position: center;
+}
+
+.socialLinksGrid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
