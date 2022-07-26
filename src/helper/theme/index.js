@@ -28,4 +28,4 @@ export const parseToJson = (data) => {
         return [];
 }
 
-export const validHttps = ["Call", "Gmail", "Email", "FacebookApp"];
+export const validHttps = ["Call", "Gmail", "Email", "FacebookApp","Outlook"];
