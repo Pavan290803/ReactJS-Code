@@ -10,10 +10,24 @@ import {
 import CardMedia from "@mui/material/CardMedia";
 import { validHttps, videoURL } from "../../../helper/theme";
 import { API_URLS } from "../../../config/api_urls/api_urls";
+import CustomModal from "../../shared/CustomModal";
 
 const Theme2 = ({ id, data, ...props }) => {
   const [play, setPlay] = useState(false);
   const navigate = useNavigate();
+  const [open, setOpen] = React.useState(false);
+  const [imgUrl, setImgUrl] = React.useState("");
+
+  const handleFullImage = (img) => {
+    setImgUrl(img);
+    setOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setImgUrl("");
+    setOpen(false);
+  };
+
   const [url, setUrl] = useState(
     "https://media.istockphoto.com/photos/dotted-grid-paper-background-texture-seamless-repeat-pattern-picture-id1320330053?b=1&k=20&m=1320330053&s=170667a&w=0&h=XisfN35UnuxAVP_sjq3ujbFDyWPurSfSTYd-Ll09Ncc="
   );
@@ -57,6 +71,11 @@ const Theme2 = ({ id, data, ...props }) => {
                     `data:image/png;base64,${data?.PersonalInfo?.CoverImageLocation}` +
                     ")",
                 }}
+                onClick={() => {
+                  handleFullImage(
+                    `data:image/png;base64,${data?.PersonalInfo?.CoverImageLocation}`
+                  );
+                }}
               ></div>
             ) : (
               <div
@@ -71,7 +90,15 @@ const Theme2 = ({ id, data, ...props }) => {
             )}
           </div>
           <center>
-            <div className={classNames(c.profileImageBorder, "rounded-circle")}>
+            <div
+              className={classNames(c.profileImageBorder, "rounded-circle")}
+              onClick={() => {
+                data?.PersonalInfo?.ImageLocation &&
+                  handleFullImage(
+                    `data:image/png;base64,${data?.PersonalInfo?.ImageLocation}`
+                  );
+              }}
+            >
               <img
                 className={classNames(c.profileImage, "rounded-circle")}
                 src={
@@ -241,6 +268,11 @@ const Theme2 = ({ id, data, ...props }) => {
             </div>
           </div>
         </div>
+        <CustomModal
+          handleModalClose={handleModalClose}
+          imgUrl={imgUrl}
+          open={open}
+        />
       </div>
     );
   }

@@ -7,7 +7,9 @@ const UserDetails = ({ userData, ...props }) => {
       <div
         className={c.profileCoverImage}
         style={{
-          backgroundImage: `url(${require("../../../../assets/images/Influencer2Profile.png")})`,
+          // backgroundImage: `url(${require("../../../../assets/images/Influencer2Profile.png")})`,
+          backgroundImage: `url(${userData?.PersonalInfo?.ImageLocation ? `data:image/png;base64,${userData?.PersonalInfo?.ImageLocation}` : require('../../../../assets/images/Profile.png')})`,
+          
         }}
       >
         <div className={classNames(c.profileCoverBg)}>

@@ -1,8 +1,21 @@
 import React from "react";
 import classNames from "classnames";
 import c from "../comic.module.scss";
+import CustomModal from "../../../shared/CustomModal";
 
 const UserDetails = ({personalInfo, ...props }) => {
+  const [open, setOpen] = React.useState(false);
+  const [imgUrl, setImgUrl] = React.useState("");
+
+  const handleFullImage = (img) => {
+      setImgUrl(img);
+      setOpen(true);
+  }
+
+  const handleModalClose = () => {
+      setImgUrl("");
+      setOpen(false);
+  }
   return (
     <React.Fragment>
       <div className="ms-5 d-flex align-items-center">
@@ -13,6 +26,7 @@ const UserDetails = ({personalInfo, ...props }) => {
             style={{
               backgroundImage: `url(${personalInfo?.ImageLocation ? `data:image/png;base64,${personalInfo?.ImageLocation}` : require('../../../../assets/images/Profile.png')})`,
             }}
+            onClick={() => {personalInfo?.ImageLocation && handleFullImage(`data:image/png;base64,${personalInfo?.ImageLocation}`)}}
           ></div>
         </div>
 
@@ -21,6 +35,7 @@ const UserDetails = ({personalInfo, ...props }) => {
           <div className={classNames(c.profileDesignation)}>{personalInfo.Work}</div>
         </div>
       </div>
+      <CustomModal handleModalClose={handleModalClose} imgUrl={imgUrl} open={open}/>
     </React.Fragment>
   );
 };

@@ -6,9 +6,22 @@ import CardMedia from '@mui/material/CardMedia';
 import {validHttps, videoURL} from '../../../helper/theme';
 import {API_URLS} from "../../../config/api_urls/api_urls";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import CustomModal from '../../shared/CustomModal';
 
 const Theme1 = ({id, data, ...props}) => {
     const [play, setPlay] = useState(false)
+    const [open, setOpen] = React.useState(false);
+    const [imgUrl, setImgUrl] = React.useState("");
+
+    const handleFullImage = (img) => {
+        setImgUrl(img);
+        setOpen(true);
+    }
+
+    const handleModalClose = () => {
+        setImgUrl("");
+        setOpen(false);
+    }
     
     const videoId = (data.FeaturedVideo ? data.FeaturedVideo.split("?v=")[1] : "testtest") //data.FeaturedVideo.split("?v=")[1];
     const thumb = "https://img.youtube.com/vi/" + videoId + "/maxresdefault.jpg"
@@ -37,12 +50,12 @@ const Theme1 = ({id, data, ...props}) => {
                <div className={classNames(c.modal)}>
                     {
                         data.PersonalInfo?.CoverImageLocation &&
-                        <div className={classNames(c.profileBgContainer)}>
+                        <div className={classNames(c.profileBgContainer)} onClick={() => { handleFullImage(`data:image/png;base64,${data?.PersonalInfo?.CoverImageLocation}`)}}>
                             <img className={classNames(c.profileBgImage)} src={`data:image/png;base64,${data?.PersonalInfo?.CoverImageLocation}`} alt="bg-img"/>
                         </div>
                     }
                     
-                    <div className={classNames("d-flex justify-content-center")}>
+                    <div className={classNames("d-flex justify-content-center")} onClick={() => {data?.PersonalInfo?.ImageLocation && handleFullImage(`data:image/png;base64,${data?.PersonalInfo?.ImageLocation}`)}}>
                         <img className={classNames(c.profileImage, "rounded-circle", data.PersonalInfo?.CoverImageLocation ? c.withBg : c.withoutBg)} src={data?.PersonalInfo?.ImageLocation ? `data:image/png;base64,${data?.PersonalInfo?.ImageLocation}` : require('../../../assets/images/Profile.png')} alt="profile"/>
                     </div>
                     
@@ -121,6 +134,7 @@ const Theme1 = ({id, data, ...props}) => {
                     
                 </div>
                </div>
+              <CustomModal handleModalClose={handleModalClose} imgUrl={imgUrl} open={open}/>
             </div>
         )
     }
